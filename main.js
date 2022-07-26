@@ -79,6 +79,6 @@ console.log(typeof c);
 
 let myFirstName = prompt('enter your firstName');
 let myMiddleName = prompt('enter your middleName');
-let myAge = prompt('enter your age');
+let myAge = +prompt('enter your age');
 
 console.log(myFirstName, myMiddleName, myAge);
