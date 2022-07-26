@@ -1,17 +1,6 @@
 //- Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
 
-let obj1 = '1';
-let obj2 = '2';
-let obj3 = 3;
-let obj4 = 4;
-let obj5 = 5.6;
-let obj6 = 6.7;
-let obj7 = true;
-let obj8 = {type: 'string'};
-let obj9 = [1, 2];
-let obj10 = 10;
-
-let arr = [obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9, obj10];
+let arr = ['1', '2', 3, 4, 5.6, 6.7, true, {type: 'string'}, [1, 2], 10];
 
 console.log(arr);
 
