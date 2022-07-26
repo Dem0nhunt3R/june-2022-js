@@ -1,84 +1,72 @@
-let v1 = 'hello';
-let v2 = 'owu';
-let v3 = 'com';
-let v4 = 'ua';
-let v5 = 1;
-let v6 = 10;
-let v7 = -999;
-let v8 = 123;
-let v9 = 3.14;
-let v10 = 2.7;
-let v11 = 16;
-let v12 = true;
-let v13 = false;
+//- Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
 
-console.log(v1);
-console.log(v2);
-console.log(v3);
-console.log(v4);
-console.log(v5);
-console.log(v6);
-console.log(v7);
-console.log(v8);
-console.log(v9);
-console.log(v10);
-console.log(v11);
-console.log(v12);
-console.log(v13);
+let obj1 = '1';
+let obj2 = '2';
+let obj3 = 3;
+let obj4 = 4;
+let obj5 = 5.6;
+let obj6 = 6.7;
+let obj7 = true;
+let obj8 = {type: 'string'};
+let obj9 = [1, 2];
+let obj10 = 10;
 
-// alert(v1);
-// alert(v2);
-// alert(v3);
-// alert(v4);
-// alert(v5);
-// alert(v6);
-// alert(v7);
-// alert(v8);
-// alert(v9);
-// alert(v10);
-// alert(v11);
-// alert(v12);
-// alert(v13);
+let arr = [obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9, obj10];
 
-document.write(v1 + '<br\>');
-document.write(v2 + '<br\>');
-document.write(v2 + '<br\>');
-document.write(v3 + '<br\>');
-document.write(v4 + '<br\>');
-document.write(v5 + '<br\>');
-document.write(v6 + '<br\>');
-document.write(v7 + '<br\>');
-document.write(v8 + '<br\>');
-document.write(v9 + '<br\>');
-document.write(v10 + '<br\>');
-document.write(v11 + '<br\>');
-document.write(v12 + '<br\>');
-document.write(v13 + '<br\>');
+console.log(arr);
 
-// Створити 3 змінних firstName, middleName, lastName, наповнити їх своїм ПІБ. З'єднати їх в одну змінну person
-// (Не об'єкт, просто за допомоги конкатенації)
+//- Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
 
-let firstName = 'firstName';
-let middleName = 'middleName';
-let lastName = 'lastName';
+let book1 = {title: 'title1', pageCount: 100, genre: 'genre1'};
+let book2 = {title: 'title2', pageCount: 200, genre: 'genre2'};
+let book3 = {title: 'title3', pageCount: 300, genre: 'genre3'};
 
-let fullName = `${firstName} ${middleName} ${lastName}`;
+//- Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - масив.
+// Кожен автор має поля name,age
 
-// - За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
-//     let a = 100; let b = '100'; let c = true;
+let book4 = {
+    title: 'title4',
+    pageCount: 400,
+    genre: 'genre4',
+    authors: [{name: 'author1', age: 1}, {name: 'author2', age: 2}]
+};
+let book5 = {
+    title: 'title5',
+    pageCount: 500,
+    genre: 'genre5',
+    authors: [{name: 'author4', age: 4}, {name: 'author5', age: 5}, {name: 'author6', age: 6}]
+};
+let book6 = {
+    title: 'title6',
+    pageCount: 600,
+    genre: 'genre6',
+    authors: [{name: 'author7', age: 7}, {name: 'author8', age: 8}, {name: 'author9', age: 9}]
+};
 
-let a = 100;
-let b = '100';
-let c = true;
+//- Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password.
+// Вивести в консоль пароль кожного користувача
 
-console.log(typeof a);
-console.log(typeof b);
-console.log(typeof c);
 
-//- За допомогою 3х різних prompt() отримати 3 слова які являються вашими Імям, По-Батькові та роками. та вивести в консоль
+let usersArr = [
+    {name: 'user1', username: 'username1', password: 'password1'},
+    {name: 'user2', username: 'username2', password: 'password2'},
+    {name: 'user3', username: 'username3', password: 'password3'},
+    {name: 'user4', username: 'username4', password: 'password4'},
+    {name: 'user5', username: 'username5', password: 'password5'},
+    {name: 'user6', username: 'username6', password: 'password6'},
+    {name: 'user7', username: 'username7', password: 'password7'},
+    {name: 'user8', username: 'username8', password: 'password8'},
+    {name: 'user9', username: 'username9', password: 'password9'},
+    {name: 'user10', username: 'username10', password: 'password10'},
+]
 
-let myFirstName = prompt('enter your firstName');
-let myMiddleName = prompt('enter your middleName');
-let myAge = prompt('enter your age');
-
-console.log(myFirstName, myMiddleName, myAge);
+console.log(usersArr[0].password);
+console.log(usersArr[1].password);
+console.log(usersArr[2].password);
+console.log(usersArr[3].password);
+console.log(usersArr[4].password);
+console.log(usersArr[5].password);
+console.log(usersArr[6].password);
+console.log(usersArr[7].password);
+console.log(usersArr[8].password);
+console.log(usersArr[9].password);
