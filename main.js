@@ -5,10 +5,8 @@ let x1 = -3;
 
 if (x1 !== 0) {
     console.log('true');
-} else if (x1 === 0) {
-    console.log('false');
 } else {
-    console.log('equals')
+    console.log('false');
 }
 
 // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає
