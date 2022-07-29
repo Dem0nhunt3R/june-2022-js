@@ -1,84 +1,102 @@
-let v1 = 'hello';
-let v2 = 'owu';
-let v3 = 'com';
-let v4 = 'ua';
-let v5 = 1;
-let v6 = 10;
-let v7 = -999;
-let v8 = 123;
-let v9 = 3.14;
-let v10 = 2.7;
-let v11 = 16;
-let v12 = true;
-let v13 = false;
+// - Є змінна х, якій ви надаєте довільне числове значення.
+//     Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
 
-console.log(v1);
-console.log(v2);
-console.log(v3);
-console.log(v4);
-console.log(v5);
-console.log(v6);
-console.log(v7);
-console.log(v8);
-console.log(v9);
-console.log(v10);
-console.log(v11);
-console.log(v12);
-console.log(v13);
+let x1 = -3;
 
-// alert(v1);
-// alert(v2);
-// alert(v3);
-// alert(v4);
-// alert(v5);
-// alert(v6);
-// alert(v7);
-// alert(v8);
-// alert(v9);
-// alert(v10);
-// alert(v11);
-// alert(v12);
-// alert(v13);
+if (x1 !== 0) {
+    console.log('true');
+} else if (x1 === 0) {
+    console.log('false');
+} else {
+    console.log('equals')
+}
 
-document.write(v1 + '<br\>');
-document.write(v2 + '<br\>');
-document.write(v2 + '<br\>');
-document.write(v3 + '<br\>');
-document.write(v4 + '<br\>');
-document.write(v5 + '<br\>');
-document.write(v6 + '<br\>');
-document.write(v7 + '<br\>');
-document.write(v8 + '<br\>');
-document.write(v9 + '<br\>');
-document.write(v10 + '<br\>');
-document.write(v11 + '<br\>');
-document.write(v12 + '<br\>');
-document.write(v13 + '<br\>');
+// - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає
+// число (в першу, другу, третю или четверту частину години).
 
-// Створити 3 змінних firstName, middleName, lastName, наповнити їх своїм ПІБ. З'єднати їх в одну змінну person
-// (Не об'єкт, просто за допомоги конкатенації)
+let time = +prompt('enter minutes');
 
-let firstName = 'firstName';
-let middleName = 'middleName';
-let lastName = 'lastName';
+if (time >= 0 && time < 15) {
+    console.log('first quarter');
+} else if (time >= 15 && time < 30) {
+    console.log('second quarter');
+} else if (time >= 30 && time < 45) {
+    console.log('third quarter');
+} else if (time >= 45 && time < 60) {
+    console.log('fourth quarter');
+} else {
+    console.log('wrong number');
+}
 
-let fullName = `${firstName} ${middleName} ${lastName}`;
+// - У змінній dayOfMonth дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число
+// (у першу, другу чи третю).
 
-// - За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
-//     let a = 100; let b = '100'; let c = true;
 
-let a = 100;
-let b = '100';
-let c = true;
+let dayOfMonth = +prompt('enter a dayOfMonth');
 
-console.log(typeof a);
-console.log(typeof b);
-console.log(typeof c);
+if (dayOfMonth >= 1 && dayOfMonth < 11) {
+    console.log('first decade');
+} else if (dayOfMonth >= 11 && dayOfMonth < 21) {
+    console.log('second decade');
+} else if (dayOfMonth >= 21 && dayOfMonth <= 31) {
+    console.log('third decade');
+} else {
+    console.log('wrong number of a day');
+}
 
-//- За допомогою 3х різних prompt() отримати 3 слова які являються вашими Імям, По-Батькові та роками. та вивести в консоль
+//- Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані
+// відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
 
-let myFirstName = prompt('enter your firstName');
-let myMiddleName = prompt('enter your middleName');
-let myAge = prompt('enter your age');
 
-console.log(myFirstName, myMiddleName, myAge);
+let dayOfWeek = prompt('enter a day');
+
+switch (dayOfWeek) {
+    case 'monday':
+        console.log('first practice');
+        break;
+    case 'tuesday':
+        console.log('first lecture');
+        break;
+    case 'wednesday':
+        console.log('second practice');
+        break;
+    case 'thursday':
+        console.log('second lecture');
+        break;
+    case 'friday':
+        console.log('time to do a homework');
+        break;
+    case 'saturday':
+        console.log('english');
+        break;
+    case 'sunday':
+        console.log('whatever');
+        break;
+    default:
+        console.log('you have entered incorect data');
+}
+
+//- Користувач вводить або має два числа.
+// Потрібно знайти та вивести максимальне число з тих двох .
+// Також потрібно врахувати коли введені рівні числа.
+
+let num1 = +prompt('first number');
+let num2 = +prompt('second number');
+
+if (num1 > num2) {
+    console.log(num1 + ' > ' + num2);
+} else if (num1 < num2) {
+    console.log(num1 + ' < ' + num2);
+} else {
+    console.log(num1 + ' = ' + num2);
+}
+
+// - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
+//     за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy
+// (хибноподыбне, тобто кастується до false)
+
+let a = 'a';
+
+let x2 = a || 'default';
+
+console.log(x2);
