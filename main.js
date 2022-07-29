@@ -95,6 +95,6 @@ if (num1 > num2) {
 
 let x2 = 'a';
 
-let a = a || 'default';
+let a = x2 || 'default';
 
 console.log(a);
