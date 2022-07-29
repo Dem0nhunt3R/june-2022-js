@@ -93,8 +93,8 @@ if (num1 > num2) {
 //     за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy
 // (хибноподыбне, тобто кастується до false)
 
-let a = 'a';
+let x2 = 'a';
 
-let x2 = a || 'default';
+let a = a || 'default';
 
-console.log(x2);
+console.log(a);
