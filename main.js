@@ -30,7 +30,7 @@ if (time >= 0 && time < 15) {
 // (у першу, другу чи третю).
 
 
-let dayOfMonth = +prompt('enter a dayO');
+let dayOfMonth = +prompt('enter a day');
 
 if (dayOfMonth >= 1 && dayOfMonth < 11) {
     console.log('first decade');
