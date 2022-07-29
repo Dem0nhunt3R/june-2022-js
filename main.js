@@ -26,11 +26,11 @@ if (time >= 0 && time < 15) {
     console.log('wrong number');
 }
 
-// - У змінній dayOfMonth дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число
+// - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число
 // (у першу, другу чи третю).
 
 
-let dayOfMonth = +prompt('enter a dayOfMonth');
+let dayOfMonth = +prompt('enter a dayO');
 
 if (dayOfMonth >= 1 && dayOfMonth < 11) {
     console.log('first decade');
