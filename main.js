@@ -1,84 +1,126 @@
-let v1 = 'hello';
-let v2 = 'owu';
-let v3 = 'com';
-let v4 = 'ua';
-let v5 = 1;
-let v6 = 10;
-let v7 = -999;
-let v8 = 123;
-let v9 = 3.14;
-let v10 = 2.7;
-let v11 = 16;
-let v12 = true;
-let v13 = false;
+//- За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
 
-console.log(v1);
-console.log(v2);
-console.log(v3);
-console.log(v4);
-console.log(v5);
-console.log(v6);
-console.log(v7);
-console.log(v8);
-console.log(v9);
-console.log(v10);
-console.log(v11);
-console.log(v12);
-console.log(v13);
+for (let i = 0; i < 10; i++) {
+    document.write(`<div>довільним текстом</div>`);
+}
 
-// alert(v1);
-// alert(v2);
-// alert(v3);
-// alert(v4);
-// alert(v5);
-// alert(v6);
-// alert(v7);
-// alert(v8);
-// alert(v9);
-// alert(v10);
-// alert(v11);
-// alert(v12);
-// alert(v13);
+//- За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
 
-document.write(v1 + '<br\>');
-document.write(v2 + '<br\>');
-document.write(v2 + '<br\>');
-document.write(v3 + '<br\>');
-document.write(v4 + '<br\>');
-document.write(v5 + '<br\>');
-document.write(v6 + '<br\>');
-document.write(v7 + '<br\>');
-document.write(v8 + '<br\>');
-document.write(v9 + '<br\>');
-document.write(v10 + '<br\>');
-document.write(v11 + '<br\>');
-document.write(v12 + '<br\>');
-document.write(v13 + '<br\>');
+for (let i = 0; i < 10; i++) {
+    document.write(`<div>довільним текстом + index = ${i}</div>`);
+}
 
-// Створити 3 змінних firstName, middleName, lastName, наповнити їх своїм ПІБ. З'єднати їх в одну змінну person
-// (Не об'єкт, просто за допомоги конкатенації)
+//- За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
 
-let firstName = 'firstName';
-let middleName = 'middleName';
-let lastName = 'lastName';
+let i = 0;
+while (i < 20) {
+    document.write('<h1>довільним текстом</h1>')
+    i++;
+}
 
-let fullName = `${firstName} ${middleName} ${lastName}`;
+//- За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
 
-// - За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
-//     let a = 100; let b = '100'; let c = true;
+let i1 = 0;
+while (i1 < 20) {
+    document.write(`<h1>довільним текстом + index = ${i1}</h1>`)
+    i1++;
+}
 
-let a = 100;
-let b = '100';
-let c = true;
+//- Використовуючи данні з масиву, за допомоги document.write та циклу
+// побудувати структуру по шаблону
+// Масив:
+//
+// let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+//
+// ШАБЛОН:
+//  <ul>
+//     <li>ITEM OF ARRAY</li>
+//     <!--
+//         і тд інші об'єкти масиву
+//          ...
+//          ...
+//          ...
+//     -->
+// </ul>
+//
+// замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
 
-console.log(typeof a);
-console.log(typeof b);
-console.log(typeof c);
+let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
 
-//- За допомогою 3х різних prompt() отримати 3 слова які являються вашими Імям, По-Батькові та роками. та вивести в консоль
+document.write('<ul>');
+for (const item of listOfItems) {
+    document.write(`<li>${item}</li>`)
+}
+document.write('</ul>');
 
-let myFirstName = prompt('enter your firstName');
-let myMiddleName = prompt('enter your middleName');
-let myAge = prompt('enter your age');
+// Використовуючи данні з масиву, за допомоги document.write та циклу
+// побудувати структуру по шаблону  Зробити адекватну стилізацію
+// Великими літерами прописанні властивості об'єкту які потрібно впровадити в шаблон
 
-console.log(myFirstName, myMiddleName, myAge);
+let products = [
+    {
+        title: 'milk',
+        price: 22,
+        image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+    },
+    {
+        title: 'juice',
+        price: 27,
+        image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+    },
+    {
+        title: 'tomato',
+        price: 47,
+        image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+    },
+    {
+        title: 'tea',
+        price: 15,
+        image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+    },
+];
+document.write('<div class="products">')
+for (const product of products) {
+    document.write(` <div class="product-card">
+        <h3 class="product-title">${product.title}. Price - ${product.price}</h3>
+        <img src="${product.image}" alt="${product.title}" class="product-image">
+    </div>`)
+}
+document.write('</div>');
+
+//є масив
+let users = [
+    {name: 'vasya', age: 31, status: false},
+    {name: 'petya', age: 30, status: true},
+    {name: 'kolya', age: 29, status: true},
+    {name: 'olya', age: 28, status: false},
+    {name: 'max', age: 30, status: true},
+    {name: 'anya', age: 31, status: false},
+    {name: 'oleg', age: 28, status: false},
+    {name: 'andrey', age: 29, status: true},
+    {name: 'masha', age: 30, status: true},
+    {name: 'olya', age: 31, status: false},
+    {name: 'max', age: 31, status: true}
+];
+// за допомоги циклу вивести:
+//     - користувачів зі статусом true
+// - користувачів зі статусом false
+// - користувачів які старші за 30 років
+
+for (const user of users) {
+    if (user.status) {
+        console.log(user);
+    }
+}
+
+for (const user of users) {
+    if (!user.status) {
+        console.log(user);
+    }
+}
+
+for (const user of users) {
+    if (user.age > 30) {
+        console.log(user);
+    }
+}
