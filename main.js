@@ -8,6 +8,7 @@ for (let i = 0; i < 10; i++) {
 
 for (let i = 0; i < 10; i++) {
     document.write(`<div>довільним текстом + index = ${i}</div>`);
+    `<div></div>`
 }
 
 //- За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
@@ -104,8 +105,6 @@ let users = [
 ];
 // за допомоги циклу вивести:
 //     - користувачів зі статусом true
-// - користувачів зі статусом false
-// - користувачів які старші за 30 років
 
 for (const user of users) {
     if (user.status) {
@@ -113,11 +112,15 @@ for (const user of users) {
     }
 }
 
+// - користувачів зі статусом false
+
 for (const user of users) {
     if (!user.status) {
         console.log(user);
     }
 }
+
+// - користувачів які старші за 30 років
 
 for (const user of users) {
     if (user.age > 30) {

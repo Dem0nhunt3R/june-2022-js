@@ -1,0 +1,14 @@
+.wrap{
+    display: flex;
+    width: 1200px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.post-card{
+    border: 2px solid black;
+    width: 18%;
+    text-align: center;
+}

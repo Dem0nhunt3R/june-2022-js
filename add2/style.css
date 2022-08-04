@@ -1,0 +1,14 @@
+.users-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 50px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.user-card{
+    text-align: center;
+    width: 350px;
+    border: 1px solid black;
+}
