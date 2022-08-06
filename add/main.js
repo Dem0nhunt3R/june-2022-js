@@ -78,5 +78,72 @@ const getArrSum = (arr) => {
     return sum;
 }
 
-
 console.log(getArrSum([1, 2, 10]));
+
+//- Дано натуральное число n. Выведите все числа от 1 до n.
+
+const numLogger = (n) => {
+    for (let i = 1; i <= n; i++) {
+        console.log(i);
+    }
+}
+
+numLogger(3);
+
+// - Даны два целых числа A и В . Выведите все числа от A до B включительно, в порядке возрастания, если A < B, или в
+// порядке убывания в противном случае.
+
+const numLogger2 = (a, b) => {
+    if (a < b) {
+        for (let i = a; i <= b; i++) {
+            console.log(i);
+        }
+    } else if (a > b) {
+        for (let i = a; i >= b; i--) {
+            console.log(i);
+        }
+    }
+}
+
+numLogger2(6, 2);
+numLogger2(2, 6);
+
+//   функція Приймає масив та число "i", та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
+//   EXAMPLE:
+//   foo([9,8,0,4], 0) // ==> [ 8, 9, 0, 4 ]
+//   foo([9,8,0,4], 1) // ==> [ 9 ,0, 8, 4 ]
+//   foo([9,8,0,4], 2) // ==> [ 9, 8, 4, 0 ]
+
+const adjacentSwapper = (arr, i) => {
+    let temp = arr[i + 1];
+    arr[i + 1] = arr[i];
+    arr[i] = temp;
+    console.log(arr);
+}
+
+adjacentSwapper([9, 8, 0, 4], 0);
+
+//- Сворити функцію яка буде переносити елементи з значенням 0 у кінець маисву. Зберігаючи при цьому порядок не нульових значень.
+// Двожина масиву від 2 до 100
+// EXAMPLE:
+// [1,0,6,0,3] => [1,6,3,0,0]
+// [0,1,2,3,4] => [1,2,3,4,0]
+// [0,0,1,0]   => [1,0,0,0]
+
+const zeroMover = (arr) => {
+    const zeroArr = [];
+    const noZeroArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 0) {
+            zeroArr[zeroArr.length] = arr[i];
+        } else {
+            noZeroArr[noZeroArr.length] = arr[i];
+        }
+    }
+
+    return [...noZeroArr, ...zeroArr];
+}
+
+
+console.log(zeroMover([0,0,1,0,0,1323,0,0,1,0,0]));
