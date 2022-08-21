@@ -233,7 +233,7 @@ let usersList = [
 ];
 // Створити під кожен елемент окремий блок. В цьому блоці, під кожну властивість, та властивості внутрішніх об'єктів
 // створити свої окремі блок.
-const explorer = (obj) => {
+const userExplorer = (obj) => {
     let userProps = [];
     getProp(obj);
 
@@ -265,7 +265,7 @@ for (const user of usersList) {
     userDiv.style.border = '2px solid black';
     userDiv.style.width = '30%';
     userDiv.style.textAlign = 'center';
-    const userProps = explorer(user);
+    const userProps = userExplorer(user);
 
     for (const userProp of userProps) {
         const userData = document.createElement('p');
@@ -317,12 +317,11 @@ const pageExplorer = (htmlElement) => {
         }
     }
 
-
 }
 
-const tagsSort = (tags) => {
-    const headings = [];
-    const paragraphs = [];
+const tagsFilter = (tags) => {
+    let headings = [];
+    let paragraphs = [];
 
     tags.map(tag => {
         if (tag.tagName === 'P') {
@@ -338,6 +337,7 @@ const tagsSort = (tags) => {
 }
 
 pageExplorer(document.body);
+console.log(tagsFilter(tags));
 
 
 // зробити div contenteditable ввести будь яке ціле слово. та при натисканні табуляції перетворити його на подвійний тег
