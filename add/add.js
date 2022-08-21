@@ -343,3 +343,14 @@ console.log(tagsFilter(tags));
 // зробити div contenteditable ввести будь яке ціле слово. та при натисканні табуляції перетворити його на подвійний тег
 // asd ->tab-> <asd></asd>
 
+const divElement = document.createElement('div');
+const text = 'asd';
+divElement.innerText = text;
+document.body.appendChild(divElement);
+
+window.addEventListener('keydown', (e) => {
+    e.preventDefault();
+    if (e.code === 'Tab') {
+        divElement.innerText = `<${text}></${text} > `;
+    }
+})
