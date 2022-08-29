@@ -30,7 +30,7 @@ for (const value of postInfoArr) {
 
     for (const key in value) {
         const paragraphElement = document.createElement('p');
-        paragraphElement.innerText = key + ': ' + value[key];
+        paragraphElement.innerHTML = `<b>${key}</b>` + ': ' + value[key];
         postDetailsDiv.appendChild(paragraphElement);
 
     }
@@ -49,12 +49,14 @@ fetch(postsUrl + '/' + postId + '/comments')
             const commentInfoArr = explorer(comment);
 
             for (const value of commentInfoArr) {
+
                 for (const key in value) {
                     const paragraphElement = document.createElement('p');
-                    paragraphElement.innerText = key + ': ' + value[key];
+                    paragraphElement.innerHTML = `<b>${key}</b>` + ': ' + value[key];
                     paragraphElement.style.overflow='hidden';
                     commentDiv.appendChild(paragraphElement);
                 }
+
             }
 
             commentsBox.appendChild(commentDiv);

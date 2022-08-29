@@ -2,8 +2,8 @@ const usersUrl = 'https://jsonplaceholder.typicode.com/users';
 let userId = localStorage.getItem('userId');
 
 const headingElement = document.createElement('h1');
-headingElement.innerText='User information:';
-headingElement.style.textAlign='center';
+headingElement.innerText = 'User information:';
+headingElement.style.textAlign = 'center';
 document.body.appendChild(headingElement)
 
 const explorer = (obj) => {
@@ -31,7 +31,7 @@ fetch(usersUrl + '/' + userId)
         userDiv.classList.add('user-box')
 
         const infoDiv = document.createElement('div');
-        infoDiv.classList.add('info-box','w90');
+        infoDiv.classList.add('info-box', 'w90');
 
         const personalInfo = document.createElement('div');
         personalInfo.classList.add('info');
@@ -56,29 +56,41 @@ fetch(usersUrl + '/' + userId)
 
         const userInfoArr = explorer(value);
         let userName = '';
-        let counter = 0;
+        let nameCount = 0;
 
         for (const value of userInfoArr) {
 
             for (const key in value) {
 
-                if (key === 'id' || (key === 'name' && counter === 0) || key === 'username' || key === 'email' || key === 'phone') {
+                if (key === 'id'
+                    || (key === 'name' && nameCount === 0)
+                    || key === 'username'
+                    || key === 'email'
+                    || key === 'phone'
+                ) {
 
                     if (key === 'name') {
                         userName = value[key];
-                        counter++;
+                        nameCount++;
                     }
 
                     const paragraphElement = document.createElement('p');
                     paragraphElement.classList.add('p2');
                     paragraphElement.innerText = key + ': ' + value[key];
                     personalInfo.appendChild(paragraphElement);
-                } else if (key === 'street' || key === 'suite' || key === 'city' || key === 'zipcode' || key === 'lat' || key === 'lng') {
+                } else if (key === 'street'
+                    || key === 'suite'
+                    || key === 'city'
+                    || key === 'zipcode'
+                    || key === 'lat'
+                    || key === 'lng') {
                     const paragraphElement = document.createElement('p');
                     paragraphElement.classList.add('p2');
                     paragraphElement.innerText = key + ': ' + value[key];
                     addressInfo.appendChild(paragraphElement);
-                } else if ((key === 'name' && counter === 1) || key === 'catchPhrase' || key === 'bs') {
+                } else if ((key === 'name' && nameCount === 1)
+                    || key === 'catchPhrase'
+                    || key === 'bs') {
                     const paragraphElement = document.createElement('p');
                     paragraphElement.classList.add('p2');
                     paragraphElement.innerText = key + ': ' + value[key];
@@ -94,16 +106,16 @@ fetch(usersUrl + '/' + userId)
         const buttonDiv = document.createElement('div');
         buttonDiv.classList.add('w90');
 
-        const postsButton = document.createElement('button');
-        postsButton.innerText = `Posts of ${userName}`;
-        postsButton.classList.add('posts-btn')
-        buttonDiv.appendChild(postsButton);
+        const showPostsBtn = document.createElement('button');
+        showPostsBtn.innerText = `Posts of ${userName}`;
+        showPostsBtn.classList.add('posts-btn')
+        buttonDiv.appendChild(showPostsBtn);
 
-        postsButton.onclick = () => {
-            postsButton.style.display = 'none';
+        showPostsBtn.onclick = () => {
+            showPostsBtn.style.display = 'none';
 
             const postsBox = document.createElement('div');
-            postsBox.classList.add('posts-box','w90');
+            postsBox.classList.add('posts-box', 'w90');
 
             fetch(usersUrl + '/' + userId + '/posts')
                 .then(res => res.json())
@@ -114,22 +126,21 @@ fetch(usersUrl + '/' + userId)
                     const postId = document.createElement('h3');
                     const postTitle = document.createElement('p');
                     postTitle.classList.add('post-title');
-                    const postDetailsButton = document.createElement('button');
-                    postDetailsButton.style.marginBottom='10px';
+                    const postDetailsBtn = document.createElement('button');
+                    postDetailsBtn.classList.add('post-details--button');
 
                     postId.innerText = 'Post ' + post.id;
-                    postTitle.innerText = 'Title: ' + post.title;
-                    postDetailsButton.innerText = 'details';
-                    postDiv.append(postId, postTitle, postDetailsButton);
+                    postTitle.innerHTML =  `<b>Title:</b> ${post.title}`;
+                    postDetailsBtn.innerText = 'details';
+                    postDiv.append(postId, postTitle, postDetailsBtn);
                     postsBox.appendChild(postDiv);
 
-                    postDetailsButton.onclick = () => {
+                    postDetailsBtn.onclick = () => {
                         localStorage.setItem('postId', post.id);
                         localStorage.setItem('postDetails', JSON.stringify(post));
                         location.href = 'http://localhost:63342/june-2022-js/post-details/post-details.html';
                     }
                 }));
-
 
             document.body.appendChild(postsBox);
         }
