@@ -1,0 +1,17 @@
+.users-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 20px;
+}
+
+.user-card{
+    width: 45%;
+    height: 150px;
+    text-align: center ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
