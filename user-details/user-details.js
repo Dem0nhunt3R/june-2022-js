@@ -1,6 +1,11 @@
 const usersUrl = 'https://jsonplaceholder.typicode.com/users';
 let userId = localStorage.getItem('userId');
 
+const headingElement = document.createElement('h1');
+headingElement.innerText='User information:';
+headingElement.style.textAlign='center';
+document.body.appendChild(headingElement)
+
 const explorer = (obj) => {
     const props = [];
 
@@ -25,29 +30,29 @@ fetch(usersUrl + '/' + userId)
         const userDiv = document.createElement('div');
         userDiv.classList.add('user-box')
 
-        const dataDiv = document.createElement('div');
-        dataDiv.classList.add('info-box','w90');
+        const infoDiv = document.createElement('div');
+        infoDiv.classList.add('info-box','w90');
 
-        const userInfo = document.createElement('div');
-        userInfo.classList.add('info');
+        const personalInfo = document.createElement('div');
+        personalInfo.classList.add('info');
         const infoP = document.createElement('p');
-        infoP.innerText = 'Information:';
+        infoP.innerText = 'Personal:';
         infoP.classList.add('p1');
-        userInfo.appendChild(infoP);
+        personalInfo.appendChild(infoP);
 
-        const userAddress = document.createElement('div');
-        userAddress.classList.add('info');
+        const addressInfo = document.createElement('div');
+        addressInfo.classList.add('info');
         const addressP = document.createElement('p');
         addressP.classList.add('p1');
         addressP.innerText = 'Address:';
-        userAddress.appendChild(addressP);
+        addressInfo.appendChild(addressP);
 
-        const userCompany = document.createElement('div');
-        userCompany.classList.add('info');
+        const companyInfo = document.createElement('div');
+        companyInfo.classList.add('info');
         const companyP = document.createElement('p');
         companyP.classList.add('p1');
         companyP.innerText = 'Company:';
-        userCompany.appendChild(companyP);
+        companyInfo.appendChild(companyP);
 
         const userInfoArr = explorer(value);
         let userName = '';
@@ -67,21 +72,21 @@ fetch(usersUrl + '/' + userId)
                     const paragraphElement = document.createElement('p');
                     paragraphElement.classList.add('p2');
                     paragraphElement.innerText = key + ': ' + value[key];
-                    userInfo.appendChild(paragraphElement);
+                    personalInfo.appendChild(paragraphElement);
                 } else if (key === 'street' || key === 'suite' || key === 'city' || key === 'zipcode' || key === 'lat' || key === 'lng') {
                     const paragraphElement = document.createElement('p');
                     paragraphElement.classList.add('p2');
                     paragraphElement.innerText = key + ': ' + value[key];
-                    userAddress.appendChild(paragraphElement);
+                    addressInfo.appendChild(paragraphElement);
                 } else if ((key === 'name' && counter === 1) || key === 'catchPhrase' || key === 'bs') {
                     const paragraphElement = document.createElement('p');
                     paragraphElement.classList.add('p2');
                     paragraphElement.innerText = key + ': ' + value[key];
-                    userCompany.appendChild(paragraphElement);
+                    companyInfo.appendChild(paragraphElement);
                 }
 
 
-                dataDiv.append(userInfo, userAddress, userCompany);
+                infoDiv.append(personalInfo, addressInfo, companyInfo);
             }
 
         }
@@ -108,9 +113,9 @@ fetch(usersUrl + '/' + userId)
 
                     const postId = document.createElement('h3');
                     const postTitle = document.createElement('p');
-                    postTitle.style.height='50%'
+                    postTitle.classList.add('post-title');
                     const postDetailsButton = document.createElement('button');
-                    postDetailsButton.style.marginBottom='10px'
+                    postDetailsButton.style.marginBottom='10px';
 
                     postId.innerText = 'Post ' + post.id;
                     postTitle.innerText = 'Title: ' + post.title;
@@ -130,7 +135,7 @@ fetch(usersUrl + '/' + userId)
         }
 
 
-        userDiv.append(dataDiv, buttonDiv);
+        userDiv.append(infoDiv, buttonDiv);
 
         document.body.appendChild(userDiv);
     });
