@@ -107,8 +107,10 @@ fetch(usersUrl + '/' + userId)
                     postDiv.classList.add('post-card');
 
                     const postId = document.createElement('h3');
-                    const postTitle = document.createElement('h4');
+                    const postTitle = document.createElement('p');
+                    postTitle.style.height='50%'
                     const postDetailsButton = document.createElement('button');
+                    postDetailsButton.style.marginBottom='10px'
 
                     postId.innerText = 'Post ' + post.id;
                     postTitle.innerText = 'Title: ' + post.title;

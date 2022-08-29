@@ -27,10 +27,12 @@ document.body.appendChild(postDetailsDiv);
 const postInfoArr = explorer(postDetails);
 
 for (const value of postInfoArr) {
+
     for (const key in value) {
         const paragraphElement = document.createElement('p');
         paragraphElement.innerText = key + ': ' + value[key];
         postDetailsDiv.appendChild(paragraphElement);
+
     }
 }
 
